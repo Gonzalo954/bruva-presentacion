@@ -4,7 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090b16">
 <meta name="description" content="Brüva: una plataforma para ordenar tu marketing, conectar tus oportunidades y tomar mejores decisiones. Presentación comercial interactiva.">
-<title>Brüva — Presentación interactiva</title>
+<title>Brüva — Experiencia interactiva con movimiento</title>
 <style>
 :root{--bg:#090b16;--bg2:#0f1121;--sheet:#17192c;--white:#f7f4ff;--muted:#b5b2c7;--pink:#f854a8;--purple:#a16df7;--stroke:#ffffff1b;--radius:22px;--max:1160px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}button,a{font:inherit}a{color:inherit;text-decoration:none}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid #e778fa;outline-offset:4px}::selection{background:#f854a8;color:#070914}.wrap{width:min(calc(100% - 52px),var(--max));margin:auto}
@@ -49,14 +49,116 @@ h1,h2,h3,p{margin-top:0}h1{font-size:clamp(48px,6.2vw,99px);line-height:1.00;let
 footer{background:#080a15;border-top:1px solid var(--stroke);padding:29px 0;color:#a6a4b7;font-size:12px}footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
 @media(min-width:1400px){.hero{min-height:820px}}@media(max-width:990px){nav{display:none}.hero-grid,.connector-grid,.demo-grid,.proof-grid{grid-template-columns:1fr}.hero{padding:100px 0}.shell{max-width:650px;margin:30px auto 0;transform:none;animation:none}.pillar-grid,.step-grid{grid-template-columns:repeat(2,1fr)}.plan-grid{grid-template-columns:1fr}.plan{min-height:unset}}@media(max-width:600px){.wrap{width:min(calc(100% - 34px),var(--max))}.hero{padding:84px 0}.hero h1{font-size:clamp(48px,12.4vw,74px)}.navbar{height:67px}.brand small{display:none}.pillar-grid,.step-grid,.logos{grid-template-columns:1fr}.metric b{font-size:17px}.mini-ui{grid-template-columns:35px 1fr}.sidebar{padding:13px 8px}.mini-main{padding:11px}.shell{border-radius:15px}.metric{padding:9px}.chart-ui{min-height:95px}.demo-screen{min-height:300px}.demo-render{padding:12px}.board{gap:5px}.board-col{padding:6px}.board-item{padding:7px}section{padding:82px 0}footer .wrap{display:block;text-align:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* BRÜVA / MOTION EDITION — Visual storytelling */
+:root{--mag-glow:rgba(245,67,162,.23)}
+body{scroll-behavior:smooth}
+.hero h1{animation:hero-rise .95s cubic-bezier(.18,.82,.18,1) both}
+.hero p{animation:hero-rise 1.08s .13s cubic-bezier(.18,.82,.18,1) both}
+.hero-actions{animation:hero-rise 1.05s .25s cubic-bezier(.18,.82,.18,1) both}
+.hero .shell{animation:levitate 8s ease-in-out infinite,hero-shell-in 1.1s .2s both}
+@keyframes hero-rise{from{opacity:0;transform:translateY(33px);filter:blur(8px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes hero-shell-in{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:blur(0)}}
+.pillar{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+.pillar:hover{border-color:#ec73ba;transform:translateY(-11px) rotate(-1deg);box-shadow:0 24px 65px #d44ba126}
+.pillar .pi{transition:transform .4s cubic-bezier(.2,.8,.2,1),background .4s}
+.pillar:hover .pi{transform:rotate(-11deg) scale(1.15);background:#ffd2ea}
+.marquee-section{overflow:hidden;position:relative;background:#111425;border-block:1px solid #ffffff1b;isolation:isolate}
+.marquee-section.alt{background:linear-gradient(90deg,#48213f,#211834 65%,#37224c)}
+.marquee-section:before,.marquee-section:after{content:"";position:absolute;top:0;height:100%;width:115px;z-index:3;pointer-events:none}
+.marquee-section:before{left:0;background:linear-gradient(90deg,#111425,transparent)}
+.marquee-section:after{right:0;background:linear-gradient(-90deg,#111425,transparent)}
+.marquee-section.alt:before{background:linear-gradient(90deg,#48213f,transparent)}
+.marquee-section.alt:after{background:linear-gradient(-90deg,#37224c,transparent)}
+.marquee-rail{display:flex;width:max-content;animation:marquee-walk 31s linear infinite;will-change:transform}
+.marquee-section.alt .marquee-rail{animation-duration:39s;animation-direction:reverse}
+.marquee-section:hover .marquee-rail{animation-play-state:paused}
+.marquee-pack{display:flex;align-items:center;flex-shrink:0;gap:36px;padding:23px 36px 23px 0}
+.marquee-pack span{font-size:clamp(17px,2.5vw,27px);font-weight:830;letter-spacing:-.045em;white-space:nowrap;color:#eee8f6}
+.marquee-pack i{width:11px;height:11px;border-radius:50%;background:#f854a8;box-shadow:0 0 20px #f854a8;font-style:normal;flex-shrink:0}
+.marquee-pack em{font-style:normal;color:#fb7ebd}
+@keyframes marquee-walk{to{transform:translateX(-33.333333%)}}
+
+.ecosystem{background:radial-gradient(ellipse at 50% 40%,#8f48c02d,transparent 45%),#070a15;padding:118px 0 90px;overflow:hidden;position:relative}
+.ecosystem:before{content:"";position:absolute;inset:0;opacity:.15;background-image:radial-gradient(#bd9eee 1px,transparent 1px);background-size:23px 23px;mask-image:radial-gradient(ellipse at 50% 45%,#000,transparent 73%);pointer-events:none}
+.ecosystem-header{text-align:center;position:relative;z-index:4}.ecosystem-header h2{max-width:870px;margin:0 auto 18px}.ecosystem-header p{max-width:680px;margin:0 auto}
+.eco-stage{height:595px;max-width:1050px;position:relative;margin:35px auto 0;isolation:isolate}
+.eco-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;overflow:visible}
+.eco-line{fill:none;stroke:url(#ecoline);stroke-width:2;stroke-dasharray:7 12;stroke-linecap:round;animation:eco-flow 14s linear infinite;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 5px #ff76be3b);transition:opacity .3s,stroke-width .3s}
+.eco-line:nth-of-type(even){animation-direction:reverse}
+@keyframes eco-flow{to{stroke-dashoffset:-380}}
+.eco-stage.has-focus .eco-line:not(.is-highlight){opacity:.16}
+.eco-stage.has-focus .eco-node:not(.is-active){opacity:.42}
+.eco-line.is-highlight{stroke-width:3.8;stroke:#ff8bc7}
+.eco-node{position:absolute;transform:translate(-50%,-50%);width:min(210px,22vw);min-width:150px;z-index:2;cursor:default;border:1px solid #ffffff32;border-radius:18px;background:linear-gradient(160deg,#1f2136,#111628);box-shadow:0 15px 45px #0007;padding:19px;display:flex;align-items:center;gap:14px;transition:border-color .35s,opacity .35s,box-shadow .35s,translate .4s cubic-bezier(.2,.8,.2,1);animation:eco-bob 5s ease-in-out infinite}
+.eco-node:hover,.eco-node.is-active{translate:0 -9px;border-color:#ff8bc7;box-shadow:0 15px 48px #ff55a03b}
+.eco-node[data-pillar="marketing"]{left:18%;top:25%;animation-delay:-.8s}
+.eco-node[data-pillar="crm"]{left:82%;top:25%;animation-delay:-2.5s}
+.eco-node[data-pillar="ia"]{left:18%;top:75%;animation-delay:-3.8s}
+.eco-node[data-pillar="reports"]{left:82%;top:75%;animation-delay:-1.9s}
+@keyframes eco-bob{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-9px)}}
+.eco-node-icon{background:#f854a822;display:grid;place-items:center;border-radius:12px;height:43px;width:43px;color:#fb76bb;flex-shrink:0}
+.eco-node-icon svg{width:24px;height:24px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.eco-node-text b{font-size:14px;display:block;line-height:1.2;letter-spacing:-.02em}
+.eco-node-text small{font-size:10px;color:#aba8c0;display:block;line-height:1.4;margin-top:6px}
+.eco-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:225px;height:225px;border-radius:50%;display:grid;place-items:center;z-index:2;background:radial-gradient(circle,#242038,#141728 72%);border:1px solid #ff77ca66;box-shadow:0 0 0 16px #ed6ac408,0 0 90px #ca54af66,inset 0 0 45px #f554b622}
+.eco-core:before{content:"";position:absolute;inset:-25px;border-radius:50%;border:1px dashed #ff7abe87;animation:eco-ring 28s linear infinite}
+.eco-core:after{content:"";position:absolute;inset:-50px;border-radius:50%;border:1px solid #bf7af331;animation:eco-pulse 4s ease-in-out infinite}
+@keyframes eco-ring{to{transform:rotate(360deg)}}
+@keyframes eco-pulse{0%,100%{transform:scale(.94);opacity:.35}50%{transform:scale(1.08);opacity:.86}}
+.eco-core-inner{text-align:center;position:relative;z-index:3}.eco-brand{font-size:57px;font-weight:900;letter-spacing:-.09em;line-height:1;color:#fff}.eco-brand span{color:#fc68b3}.eco-core-inner small{display:block;margin-top:13px;text-transform:uppercase;letter-spacing:.16em;font-size:9px;color:#d6c5ed}
+.eco-foot{text-align:center;font-size:12px;color:#aeadc3;margin-top:-15px}
+.eco-badges{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:22px}
+.eco-badges span{color:#ccbed9;font-size:11px;letter-spacing:.09em;text-transform:uppercase;border:1px solid #ffffff26;border-radius:100px;padding:10px 13px;background:#ffffff08}
+.eco-spark{fill:#ffa4d6;filter:drop-shadow(0 0 8px #fa57b6)}
+.demo-screen,.demo-copy{transition:opacity .18s ease,transform .22s ease}
+.demo-screen.switching,.demo-copy.switching{opacity:.18;transform:translateY(9px)}
+.board-item{transition:transform .3s,background .3s}.board-item:hover{background:#32344e;transform:translateX(5px)}
+.report-bars span,.chart-ui span{transform-origin:bottom;animation:bar-build 1.2s cubic-bezier(.18,.8,.25,1) both}
+.report-bars span:nth-child(2n),.chart-ui span:nth-child(2n){animation-delay:.13s}
+@keyframes bar-build{from{transform:scaleY(.06);opacity:.2}to{transform:scaleY(1);opacity:1}}
+.js-motion .reveal-motion{opacity:0;transform:translate3d(0,40px,0) scale(.985);filter:blur(4px);transition:opacity .8s cubic-bezier(.2,.7,.17,1),transform .85s cubic-bezier(.2,.7,.17,1),filter .85s;transition-delay:var(--reveal-delay,0ms)}
+.js-motion .reveal-motion.in-view{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}
+@media(max-width:900px){.eco-stage{height:540px}.eco-node{min-width:138px;padding:13px;gap:8px}.eco-node-text b{font-size:12px}.eco-node-icon{width:34px;height:34px}.eco-node-icon svg{width:19px;height:19px}.eco-core{width:176px;height:176px}.eco-brand{font-size:45px}}
+@media(max-width:640px){.marquee-pack{padding-block:17px;gap:21px}.marquee-pack span{font-size:18px}.marquee-pack i{width:8px;height:8px}.ecosystem{padding:82px 0 72px}.eco-stage{height:540px;margin-top:40px}.eco-node{width:152px;min-width:0;min-height:87px;padding:12px;gap:7px}.eco-node[data-pillar="marketing"]{left:25%;top:14%}.eco-node[data-pillar="crm"]{left:75%;top:14%}.eco-node[data-pillar="ia"]{left:25%;top:86%}.eco-node[data-pillar="reports"]{left:75%;top:86%}.eco-node-text small{font-size:9px}.eco-node-icon{width:27px;height:27px;border-radius:8px}.eco-node-icon svg{width:17px;height:17px}.eco-node-text b{font-size:11px}.eco-core{width:170px;height:170px}.eco-core:before{inset:-14px}.eco-core:after{inset:-28px}.eco-svg{opacity:.8}.eco-foot{margin-top:10px}}
+@media(max-width:380px){.eco-node{width:135px}.eco-node[data-pillar="marketing"],.eco-node[data-pillar="ia"]{left:24%}.eco-node[data-pillar="crm"],.eco-node[data-pillar="reports"]{left:76%}.eco-node-icon{display:none}}
+@media(prefers-reduced-motion:reduce){.marquee-rail,.eco-line,.eco-node,.eco-core:before,.eco-core:after,.hero h1,.hero p,.hero-actions,.hero .shell,.report-bars span,.chart-ui span{animation:none!important}.js-motion .reveal-motion{opacity:1;transform:none;filter:none;transition:none}}
+
 </style>
 </head>
 <body>
 <div id="progress"></div>
-<header><div class="wrap navbar"><a href="#inicio" class="brand" aria-label="Brüva, inicio">brüva<i>.</i><small>marketing &amp; sales OS</small></a><nav aria-label="Secciones"><a href="#pilares">Pilares</a><a href="#producto">Plataforma</a><a href="#integraciones">Integraciones</a><a href="#planes">Planes</a></nav><a href="#contacto" class="btn small primary">Solicitar demo ↗</a></div></header>
+<header><div class="wrap navbar"><a href="#inicio" class="brand" aria-label="Brüva, inicio">brüva<i>.</i><small>marketing &amp; sales OS</small></a><nav aria-label="Secciones"><a href="#pilares">Pilares</a><a href="#ecosistema">Ecosistema</a><a href="#producto">Plataforma</a><a href="#integraciones">Integraciones</a><a href="#planes">Planes</a></nav><a href="#contacto" class="btn small primary">Solicitar demo ↗</a></div></header>
 <main>
 <section class="hero" id="inicio"><div class="wrap hero-grid"><div><span class="chip"><span class="dot"></span> Plataforma para marketing y ventas</span><h1>Menos herramientas.<br><span class="grad">Más control.</span></h1><p>Brüva reúne la gestión del equipo de marketing, el CRM comercial, WhatsApp con IA y la reportería en una operación conectada.</p><div class="hero-actions"><a href="#producto" class="btn primary">Explorar la plataforma ↗</a><a href="#planes" class="btn">Conocer planes</a></div><div class="hero-meta"><span>01 <b>Gestión interna</b></span><span>02 <b>CRM</b></span><span>03 <b>WhatsApp con IA</b></span><span>04 <b>Reportería</b></span></div></div><div class="shell" aria-label="Panel conceptual de Brüva"><div class="shell-top"><b class="light"></b><b class="light"></b><b class="light"></b><span>BRÜVA · VISTA ILUSTRATIVA</span></div><div class="mini-ui"><div class="sidebar"><span class="side-symbol"></span><span class="side-symbol"></span><span class="side-symbol"></span><span class="side-symbol"></span><span class="side-symbol"></span></div><div class="mini-main"><div class="mini-kicker">Dashboard ejecutivo</div><div class="mini-head"><strong>Visión general</strong><em>Este mes ●</em></div><div class="metric-grid"><div class="metric"><label>Leads recibidos</label><b>248</b><small>↑ Tendencia positiva</small></div><div class="metric"><label>Tasa de contacto</label><b>78%</b><small>Seguimiento</small></div><div class="metric"><label>Piezas aprobadas</label><b>42</b><small>Operación activa</small></div></div><div class="chart-ui" aria-hidden="true"><span style="height:39%"></span><span style="height:52%"></span><span style="height:49%"></span><span style="height:67%"></span><span style="height:58%"></span><span style="height:80%"></span><span style="height:72%"></span><span style="height:94%"></span></div></div></div></div></div></section>
+<div class="marquee-section" aria-label="Gestión inteligente de marketing y ventas"><div class="marquee-rail" aria-hidden="true"><div class="marquee-pack"><span>GESTIÓN <em>INTELIGENTE</em></span><i></i><span>MARKETING + VENTAS</span><i></i><span>CRM</span><i></i><span>WHATSAPP CON IA</span><i></i><span>DATOS EN TIEMPO REAL</span><i></i><span>UN SOLO <em>ECOSISTEMA</em></span><i></i></div><div class="marquee-pack"><span>GESTIÓN <em>INTELIGENTE</em></span><i></i><span>MARKETING + VENTAS</span><i></i><span>CRM</span><i></i><span>WHATSAPP CON IA</span><i></i><span>DATOS EN TIEMPO REAL</span><i></i><span>UN SOLO <em>ECOSISTEMA</em></span><i></i></div><div class="marquee-pack"><span>GESTIÓN <em>INTELIGENTE</em></span><i></i><span>MARKETING + VENTAS</span><i></i><span>CRM</span><i></i><span>WHATSAPP CON IA</span><i></i><span>DATOS EN TIEMPO REAL</span><i></i><span>UN SOLO <em>ECOSISTEMA</em></span><i></i></div></div></div>
 <section class="pillars" id="pilares"><div class="wrap"><div class="eyebrow">01 / Arquitectura de Brüva</div><h2>Cuatro pilares.<br><span class="grad">Un mismo sistema.</span></h2><p class="sub">Desde la planificación de marketing hasta el seguimiento comercial: toda la operación comparte una misma visión.</p><div class="pillar-grid"><article class="pillar"><div class="pi">01</div><h3>Gestión interna</h3><p>Briefs, tareas, grillas, revisiones y aprobaciones para que el equipo trabaje con claridad.</p></article><article class="pillar"><div class="pi">02</div><h3>CRM comercial</h3><p>Contactos, responsables, estados, tiempos de respuesta y oportunidades.</p></article><article class="pillar"><div class="pi">03</div><h3>WhatsApp con IA</h3><p>Apoyo automatizado a la primera atención y registro de datos de potenciales clientes.</p></article><article class="pillar"><div class="pi">04</div><h3>Reportería</h3><p>Inversión, resultados, leads y embudos en un solo lugar para tomar decisiones.</p></article></div></div></section>
+<div class="marquee-section alt" aria-label="Flujo de trabajo: planifica, conecta, automatiza y analiza"><div class="marquee-rail" aria-hidden="true"><div class="marquee-pack"><span>PLANIFICA</span><i></i><span>CONECTA</span><i></i><span>AUTOMATIZA</span><i></i><span>ANALIZA</span><i></i><span><em>TODO EN BRÜVA</em></span><i></i></div><div class="marquee-pack"><span>PLANIFICA</span><i></i><span>CONECTA</span><i></i><span>AUTOMATIZA</span><i></i><span>ANALIZA</span><i></i><span><em>TODO EN BRÜVA</em></span><i></i></div><div class="marquee-pack"><span>PLANIFICA</span><i></i><span>CONECTA</span><i></i><span>AUTOMATIZA</span><i></i><span>ANALIZA</span><i></i><span><em>TODO EN BRÜVA</em></span><i></i></div></div></div>
+
+<section class="ecosystem" id="ecosistema" aria-labelledby="eco-title">
+<div class="wrap"><div class="ecosystem-header"><div class="eyebrow">02 / Ecosistema Brüva</div>
+<h2 id="eco-title">Todo conectado.<br><span class="grad">Todo gira en torno a Brüva.</span></h2>
+<p class="sub">Cuatro pilares que comparten una misma operación. Sigue las conexiones en movimiento y explora cada módulo.</p></div>
+<div class="eco-stage" id="eco-stage">
+<svg class="eco-svg" viewBox="0 0 1000 595" preserveAspectRatio="none" aria-hidden="true">
+<defs><linearGradient id="ecoline" x1="0" x2="1"><stop offset="0" stop-color="#f75aa9" stop-opacity=".65"/><stop offset=".5" stop-color="#cc83f9"/><stop offset="1" stop-color="#f75aa9" stop-opacity=".65"/></linearGradient></defs>
+<path class="eco-line" data-edge="marketing" d="M500 297 Q373 140 180 148"/><path class="eco-line" data-edge="crm" d="M500 297 Q620 137 820 148"/>
+<path class="eco-line" data-edge="ia" d="M500 297 Q373 470 180 446"/><path class="eco-line" data-edge="reports" d="M500 297 Q630 474 820 446"/>
+<circle class="eco-spark" r="5"><animateMotion dur="4.1s" repeatCount="indefinite" path="M500 297 Q373 140 180 148"/></circle>
+<circle class="eco-spark" r="5"><animateMotion dur="4.7s" repeatCount="indefinite" path="M500 297 Q620 137 820 148"/></circle>
+<circle class="eco-spark" r="5"><animateMotion dur="5.1s" repeatCount="indefinite" path="M500 297 Q373 470 180 446"/></circle>
+<circle class="eco-spark" r="5"><animateMotion dur="4.5s" repeatCount="indefinite" path="M500 297 Q630 474 820 446"/></circle>
+</svg>
+<div class="eco-core"><div class="eco-core-inner"><div class="eco-brand">brüva<span>.</span></div><small>Centro operativo</small></div></div>
+<div class="eco-node" data-pillar="marketing"><div class="eco-node-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9h10M7 13h7M7 17h5"/></svg></div><div class="eco-node-text"><b>Gestión interna</b><small>Tareas, grilla, aprobaciones</small></div></div>
+<div class="eco-node" data-pillar="crm"><div class="eco-node-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M2 20v-2a6 6 0 0 1 12 0v2M16 6a3 3 0 0 1 0 6M17 16c3 0 5 2 5 4"/></svg></div><div class="eco-node-text"><b>CRM</b><small>Leads, equipo, seguimiento</small></div></div>
+<div class="eco-node" data-pillar="ia"><div class="eco-node-icon"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-8.5 8A9 9 0 0 1 8 19l-4 1 1-4A8.6 8.6 0 0 1 4 11.5a8 8 0 0 1 16 0Z"/><path d="m10 9 3-2-1 4h3l-4 5 1-5"/></svg></div><div class="eco-node-text"><b>WhatsApp + IA</b><small>Atención automatizada</small></div></div>
+<div class="eco-node" data-pillar="reports"><div class="eco-node-icon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20v-9M2 20h21"/></svg></div><div class="eco-node-text"><b>Reportería</b><small>Datos, inversión, resultados</small></div></div>
+</div>
+<div class="eco-foot">Conexiones ilustrativas de los cuatro pilares de la plataforma</div>
+<div class="eco-badges"><span>Google Ads</span><span>Meta Ads</span><span>Analítica</span><span>WhatsApp</span><span>CRM y ventas</span></div>
+</div></section>
+
 <section class="demo" id="producto"><div class="wrap"><div class="eyebrow">02 / Recorrido del producto</div><h2>La operación,<br><span class="grad">por dentro.</span></h2><p class="sub">Explora los cuatro pilares. Las visualizaciones de esta demo son ilustrativas y no muestran información real de clientes.</p><div class="demo-tabs" role="tablist" aria-label="Pilares de Brüva"><button role="tab" aria-selected="true" data-tab="marketing">Gestión interna</button><button role="tab" aria-selected="false" data-tab="crm">CRM</button><button role="tab" aria-selected="false" data-tab="ia">WhatsApp con IA</button><button role="tab" aria-selected="false" data-tab="reportes">Reportería</button></div><div class="demo-grid"><div class="demo-screen"><div class="demo-top">BRÜVA / <span id="screen-label">MARKETING</span> <span style="float:right">VISTA ILUSTRATIVA</span></div><div class="demo-render" id="screen-content"></div></div><div class="demo-copy"><div class="eyebrow" id="demo-kicker">Pilar 01</div><h3 id="demo-title">Marketing, bajo control.</h3><p id="demo-desc">Planifica cada entrega, revisa las piezas y lleva las aprobaciones a un flujo visible.</p><ul id="demo-list"><li>Grilla editorial</li><li>Seguimiento de tareas</li><li>Revisión y aprobación</li></ul></div></div></div></section>
 <section class="steps" id="flujo"><div class="wrap"><div class="eyebrow">03 / Cómo se trabaja</div><h2>Del brief a la venta.<br><span class="grad">Sin perder el hilo.</span></h2><p class="sub">Una metodología compartida entre marketing, los equipos comerciales y quienes toman las decisiones.</p><div class="step-grid"><article class="step"><b>01 · PLANIFICAR</b><h3>Definir</h3><p>Objetivos, requerimientos, fechas y responsables en un mismo espacio.</p></article><article class="step"><b>02 · PRODUCIR</b><h3>Coordinar</h3><p>Contenidos, piezas, comentarios, versiones y aprobaciones centralizadas.</p></article><article class="step"><b>03 · CONECTAR</b><h3>Gestionar leads</h3><p>Captura y seguimiento de oportunidades con visibilidad comercial.</p></article><article class="step"><b>04 · ANALIZAR</b><h3>Mejorar</h3><p>Reportes que unen inversión, actividad y resultados del embudo.</p></article></div></div></section>
 <section class="connectors" id="integraciones"><div class="wrap connector-grid"><div><div class="eyebrow">04 / Ecosistema conectado</div><h2>Una operación.<br><span class="grad">Todos tus canales.</span></h2><p class="sub">Brüva está diseñada para centralizar el trabajo y la información procedente de herramientas de marketing, mensajería, analítica y ventas. La disponibilidad específica de cada integración se confirma durante la implementación.</p><a href="#planes" class="btn">Ver cómo se organiza por planes ↗</a></div><div class="logos"><div class="logo"><span class="emblem" style="background:#fff;color:#4285f4">G</span>Google Ads</div><div class="logo"><span class="emblem meta">∞</span>Meta Ads</div><div class="logo"><span class="emblem wa">☏</span>WhatsApp</div><div class="logo"><span class="emblem ga">▤</span>Analytics &amp; datos</div></div></div></section>
@@ -75,9 +177,33 @@ reportes:{label:"REPORTERÍA",kicker:"Pilar 04",title:"Decisiones conectadas.",d
 };
 const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
 function activate(key){const d=scenes[key];if(!d)return;$$('[data-tab]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===key)));$('#screen-label').textContent=d.label;$('#screen-content').innerHTML=d.render;$('#demo-kicker').textContent=d.kicker;$('#demo-title').textContent=d.title;$('#demo-desc').textContent=d.desc;$('#demo-list').replaceChildren(...d.points.map(s=>{const li=document.createElement('li');li.textContent=s;return li}))}
-$$('[data-tab]').forEach(b=>b.addEventListener('click',()=>activate(b.dataset.tab)));activate('marketing');
+let tabTimer;
+$('[data-tab]').forEach(b=>b.addEventListener('click',()=>{
+clearTimeout(tabTimer);
+$('.demo-screen').classList.add('switching');$('.demo-copy').classList.add('switching');
+tabTimer=setTimeout(()=>{activate(b.dataset.tab);$('.demo-screen').classList.remove('switching');$('.demo-copy').classList.remove('switching')},165)
+}));activate('marketing');
 let ticking=false;function track(){if(!ticking){requestAnimationFrame(()=>{const d=document.documentElement;const p=(d.scrollTop/(d.scrollHeight-d.clientHeight))*100;$('#progress').style.width=Math.max(0,Math.min(100,p||0))+'%';ticking=false});ticking=true}}
 window.addEventListener('scroll',track,{passive:true});track();
+
+/* Real motion layer: progressive enhancement */
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion){
+document.body.classList.add('js-motion');
+const targets=document.querySelectorAll('.pillars .eyebrow,.pillars h2,.pillars .sub,.pillar,.step,.plan,.logo,.proof-note,.ecosystem-header,.eco-badges,.connector-grid > div,.demo .eyebrow,.demo h2,.demo .sub,.demo-grid,.pricing .eyebrow,.pricing h2,.pricing .sub,.cta h2');
+targets.forEach((el,i)=>{el.classList.add('reveal-motion');let parent=el.parentElement;let siblings=parent?[...parent.children].filter(x=>x.matches('.pillar,.step,.plan,.logo')):[];let index=siblings.indexOf(el);if(index>=0)el.style.setProperty('--reveal-delay',Math.min(index*110,360)+'ms')});
+const io=new IntersectionObserver((items)=>{items.forEach(item=>{if(item.isIntersecting){item.target.classList.add('in-view');io.unobserve(item.target)}})},{threshold:.08,rootMargin:'0px 0px -25px 0px'});
+targets.forEach(el=>io.observe(el));
+}
+const ecosystem=document.querySelector('#eco-stage');
+if(ecosystem){
+const nodes=[...ecosystem.querySelectorAll('.eco-node')];
+nodes.forEach(n=>{
+n.addEventListener('mouseenter',()=>{ecosystem.classList.add('has-focus');n.classList.add('is-active');ecosystem.querySelector('.eco-line[data-edge="'+n.dataset.pillar+'"]')?.classList.add('is-highlight')});
+n.addEventListener('mouseleave',()=>{ecosystem.classList.remove('has-focus');n.classList.remove('is-active');ecosystem.querySelector('.eco-line[data-edge="'+n.dataset.pillar+'"]')?.classList.remove('is-highlight')});
+});
+}
+
 })();
 </script>
 </body>
