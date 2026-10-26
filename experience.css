@@ -106,3 +106,49 @@ body.is-pointer .cursor-halo{opacity:1}
 @media(max-width:980px){.story-grid{grid-template-columns:1fr}.story-left{position:relative;top:auto}.story-rail{display:none}.story-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.story-card{min-height:410px}}
 @media(max-width:640px){.hero{min-height:650px}.hero .shell-caption{right:0;bottom:-18px}.hero .hero-tag{display:none}.hero-ambient .ha-orb{right:-50%;top:26%;width:350px;height:350px}.story-cards{grid-template-columns:1fr}.story-card{min-height:405px;padding:26px}.story-points{grid-template-columns:1fr;gap:7px}.story-points div{padding-top:12px}.hero h1{font-size:clamp(50px,12vw,73px)}.ecosystem-header h2{font-size:36px}.plan.featured:before{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.hero:before,.hero:after,.hero-ambient .ha-orb,.hero-ambient .ha-orb:before,.hero-ambient .ha-orb:after,.hero-ambient .ha-star,.hero .shell-caption,.cta:before,.story-art .story-signal{animation:none!important}.cursor-halo{display:none!important}}
+
+
+/* 2026-10-26 / Refined motion banners: editorial, subtle and lightweight */
+.marquee-section{
+  background:#101222;
+  border-top:1px solid rgba(255,255,255,.075);
+  border-bottom:1px solid rgba(255,255,255,.075);
+}
+.marquee-section.alt{
+  background:linear-gradient(90deg,#18152a,#1c172d 58%,#17182c);
+}
+.marquee-section:before,.marquee-section:after{width:clamp(46px,10vw,165px)}
+.marquee-section:before{background:linear-gradient(90deg,#101222 0%,rgba(16,18,34,0) 100%)}
+.marquee-section:after{background:linear-gradient(270deg,#101222 0%,rgba(16,18,34,0) 100%)}
+.marquee-section.alt:before{background:linear-gradient(90deg,#18152a,transparent)}
+.marquee-section.alt:after{background:linear-gradient(270deg,#17182c,transparent)}
+.marquee-pack{
+  gap:27px;
+  padding:16px 28px 16px 0;
+}
+.marquee-pack span{
+  color:#c0bacf;
+  font-size:clamp(12px,1.15vw,15px);
+  font-weight:620;
+  letter-spacing:.065em;
+  text-transform:uppercase;
+}
+.marquee-pack em{color:#dda3c9;font-weight:650}
+.marquee-pack i{
+  width:4px;
+  height:4px;
+  background:#bd8fb8;
+  opacity:.68;
+  box-shadow:none;
+}
+.marquee-rail{animation-duration:58s;will-change:transform}
+.marquee-section.alt .marquee-rail{animation-duration:68s}
+.marquee-section:hover .marquee-rail{animation-play-state:running}
+@media(max-width:640px){
+  .marquee-pack{gap:20px;padding:13px 21px 13px 0}
+  .marquee-pack span{font-size:12px;letter-spacing:.05em}
+  .marquee-pack i{width:3px;height:3px}
+}
+@media(prefers-reduced-motion:reduce){
+  .marquee-rail,.marquee-section.alt .marquee-rail{animation:none!important}
+}
